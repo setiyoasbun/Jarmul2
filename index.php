@@ -117,13 +117,75 @@
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
+                <form role="form" action="upload.php" method="post" enctype="multipart/form-data">
+                  <div class="box-body">
+                    <div class="form-group">
+                      <label for="exampleInputFile">File input:</label>
+                      <input type="file" name="fileToUpload" id="fileToUpload">
+                    </div>
+                    <div class="form-group">
+                      <label>Format:</label>
+                      <select class="form-control" name="videoformat">
+                        <option>mkv</option>
+                        <option>avi</option>
+                        <option>mp4</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Audio Format:</label>
+                      <select class="form-control" name="audioformat">
+                        <option>aac</option>
+                        <option>mp3</option>
+                        <option>flac</option>
+                        <option>ac3</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Audio Sample Rate:</label>
+                      <select class="form-control" name="samplerate">
+                        <option>8000</option>
+                        <option>11025</option>
+                        <option>16000</option>
+                        <option>22050</option>
+                        <option>32000</option>
+                        <option>37800</option>
+                        <option>44056</option>
+                        <option>44100</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Audio Channel:</label>
+                      <select class="form-control" name="channel">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>5 (Only for ac3)</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Video Codec:</label>
+                      <select class="form-control" name="codec">
+                        <option>h264</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Video Width:</label>
+                      <input type="text" class="form-control" id="videowidth" name="videowidth" placeholder="Enter Width in Pixel" value="0">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Video Height:</label>
+                      <input type="text" class="form-control" id="videoheight" name="videoheight" placeholder="Enter Height in Pixel" value="0">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">FPS:</label>
+                      <input type="text" class="form-control" id="fps" name="fps" placeholder="Enter FPS" value="0">
+                    </div>
+                    
+                  </div><!-- /.box-body -->
+
+                  <div class="box-footer">
+                    <input type="submit" name="submit" class="btn btn-primary pull-right" value="Upload Image"></button>
+                  </div>
+                </form>
               </div>
               <!-- /.tab-pane -->
             </div>
