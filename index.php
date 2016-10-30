@@ -121,7 +121,7 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputFile">File input:</label>
-                      <input type="file" name="fileToUpload" id="fileToUpload">
+                      <input type="file" name="fileToUpload2" id="fileToUpload2">
                     </div>
                     <div class="form-group">
                       <label>Format:</label>
@@ -185,7 +185,7 @@
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <input type="submit" name="submit" class="btn btn-primary pull-right" value="Upload Image"></button>
+                    <input type="submit" name="submit2" class="btn btn-primary pull-right" value="Upload Image"></button>
                   </div>
                 </form>
               </div>
