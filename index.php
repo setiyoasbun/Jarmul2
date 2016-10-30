@@ -117,7 +117,7 @@
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_3">
-                <form role="form" action="upload.php" method="post" enctype="multipart/form-data">
+                <form role="form" action="upload_video.php" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputFile">File input:</label>
@@ -129,6 +129,8 @@
                         <option>mkv</option>
                         <option>avi</option>
                         <option>mp4</option>
+                        <option>flv</option>
+                        <option>mpg</option>
                       </select>
                     </div>
                     <div class="form-group">
