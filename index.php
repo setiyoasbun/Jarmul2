@@ -93,25 +93,31 @@
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2">
-                <form role="form" action="upload.php" method="post" enctype="multipart/form-data">
+                <form role="form" action="upload_audio.php" method="post" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputFile">File input:</label>
-                      <input type="file" name="fileToUpload" id="fileToUpload">
+                      <input type="file" name="fileToUpload3" id="fileToUpload3">
                     </div>
                     <div class="form-group">
                       <label>Format:</label>
-                      <select class="form-control" name="format">
+                      <select class="form-control" name="audioformat">
                         <option>mp3</option>
                         <option>mp4</option>
                         <option>ac3</option>
+                        <option>aiff</option>
+                        <option>ogg</option>                        
                       </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">bit-rate:</label>
+                      <input type="text" class="form-control" id="bit-rate" name="bit-rate" placeholder="Enter bit-rate" value="0">
                     </div>
                     
                   </div><!-- /.box-body -->
 
                   <div class="box-footer">
-                    <input type="submit" name="submit" class="btn btn-primary pull-right" value="Upload Image"></button>
+                    <input type="submit" name="submit3" class="btn btn-primary pull-right" value="Upload Image"></button>
                   </div>
                 </form>
               </div>

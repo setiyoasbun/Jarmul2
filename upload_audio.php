@@ -1,34 +1,29 @@
 <?php
 $target_dir = "/home/daniel/rnd/Jarmul2/uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload2"]["name"]);
-$target_name = basename($_FILES["fileToUpload2"]["name"]);
-$videoFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$target_file = $target_dir . basename($_FILES["fileToUpload3"]["name"]);
+$target_name = basename($_FILES["fileToUpload3"]["name"]);
+$audioFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 //$target_length = filesize($_FILES["fileToUpload"]["size"]);
 /*echo $target_name;*/
 
 /*$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);*/
 // Check if image file is a actual image or fake image
-if(isset($_POST["submit2"])) {
-    
-    if(move_uploaded_file($_FILES["fileToUpload2"]["tmp_name"], $target_file))
+if(isset($_POST["submit3"])) {
+   	//header("Location: index.php");
+    if(move_uploaded_file($_FILES["fileToUpload3"]["tmp_name"], $target_file))
     {            //header("Location: index.php");
-        echo "berhasil";
-        echo $target_file;
-        echo $target_name;
+        // echo $target_file;
+        // echo $_POST["audioformat"];
     }
     else{
         header("Location: index.php?status=bukanimage");
     }
-    	$videoformat = $_POST["videoformat"];
+    
         $audioformat = $_POST["audioformat"];
-        $samplerate = $_POST["samplerate"];
-        $channel = $_POST["channel"];
-        $videocodec = $_POST["codec"];
-        $width = $_POST["videowidth"];
-        $height = $_POST["videoheight"];
-        $fps = $_POST["fps"];
+        $bitrate = $_POST["bit-rate"];
+
     	/*echo $format;*/
-        exec("python video_convert.py ".$target_file." ".$videoformat." ".$audioformat." ".$samplerate." ".$channel." ".$videocodec." ".$width." ".$height." ".$fps." ");/*
+        exec("python audio_convert.py ".$target_name." ".$audioformat." ".$bitrate." ");/*
         $d_file = $target_dir ."new-". basename($_FILES["fileToUpload"]["name"],$videoFileType).$videoformat;
         	echo $d_file;
         
