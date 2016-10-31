@@ -12,7 +12,7 @@ height = int(sys.argv[3])
 width = int(sys.argv[4])
 
 if height == 0 or width == 0:
-   img.save('new-'+imgname+'.'+imgformat,imgformat)
+   img.save('new-'+imgname+'.'+imgformat,imgformat,quality=50,optimize=True)
 else:
    new_img = img.resize((width,height)) 
    new_img.save('new-'+imgname+'.'+imgformat,imgformat)
