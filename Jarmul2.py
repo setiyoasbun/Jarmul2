@@ -3,7 +3,7 @@ import sys
 from PIL import Image
 from os.path import basename
 
-os.chdir('uploads/')
+os.chdir('/home/daniel/rnd/Jarmul2/uploads/')
 name = sys.argv[1]
 imgname = os.path.splitext(name)[0]
 img = Image.open(name)

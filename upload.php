@@ -1,6 +1,6 @@
 
 <?php
-$target_dir = "uploads/";
+$target_dir = "/home/daniel/rnd/Jarmul2/uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $target_name = basename($_FILES["fileToUpload"]["name"]);
 //$target_length = filesize($_FILES["fileToUpload"]["size"]);
@@ -9,15 +9,16 @@ $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        $uploadOk = 1;
+    // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    // if($check !== false) {
+    //     $uploadOk = 1;
         move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
                 //header("Location: index.php");
-    } else {
-        $uploadOk = 0;
-        header("Location: index.php?status=bukanimage");
-    }
+    // } 
+    // else {
+    //     $uploadOk = 0;
+    //     header("Location: index.php?status=bukanimage");
+    // }
     if ($uploadOk == 1) {
     	$format = $_POST["format"];
     	$height = $_POST["height"];
@@ -26,7 +27,8 @@ if(isset($_POST["submit"])) {
         exec("python Jarmul2.py ".$target_name." ".$format." ".$height." ".$width." ");
         $d_file = $target_dir ."new-". basename($_FILES["fileToUpload"]["name"],$imageFileType).$format;
         	echo $d_file;
-        
+            echo $target_file
+            ss
         if (file_exists($target_file)) {
 		    header('Content-Description: File Transfer');
 		    header('Content-Type: application/image');

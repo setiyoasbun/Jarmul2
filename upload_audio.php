@@ -39,6 +39,18 @@ if(isset($_POST["submit3"])) {
 		    readfile($d_file);
 		    exit;
 		}*/
+        if (file_exists($target_file)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="'.$target_file.'"');
+            header('Cache-Control: private');
+            header('Content-Length: '.filesize($target_file));
+            header('Pragma: public');
+            ob_clean();
+            flush();
+            readfile($target_file);
+            exit;
+        }
 
 }
 ?>
